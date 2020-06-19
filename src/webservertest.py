@@ -1,4 +1,4 @@
-from src.backendtools import DatabaseConnector
+from dbconnector import DatabaseConnector
 
 db = DatabaseConnector('mongodb://localhost:27017')
 

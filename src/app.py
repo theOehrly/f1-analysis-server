@@ -1,7 +1,8 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
-from src import dataprovider, lookuptables
+import dataprovider
+import lookuptables
 
 db = dataprovider.db
 
