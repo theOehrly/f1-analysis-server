@@ -30,7 +30,7 @@ class DatabaseConnector:
         :return: List of sessions; one dict per session containing session id and name [{'id': ..., 'name': ...}, ]
         :param kwargs: optional; you can pass keyword arguments which are directly passed to pymongo's .find({filter_key=val})
         """
-        return list(self._sessions.find(kwargs, {'_id': 0, 'id': 1, 'name': 1, 'date': 1}))
+        return list(self._sessions.find(kwargs, {'_id': 0, 'id': 1, 'name': 1, 'date': 1, 'startTime': 1, 'endTime': 1}))
 
     def get_value_from_session(self, sessionid, key):
         """Key-value lookup for the provided session id and key

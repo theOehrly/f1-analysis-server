@@ -1,5 +1,5 @@
-from webserver.dbconnector import DatabaseConnector
-from webserver.lookuptables import driver_query
+from src.dbconnector import DatabaseConnector
+from src.lookuptables import driver_query
 from pandas import Timestamp
 from datetime import datetime
 
