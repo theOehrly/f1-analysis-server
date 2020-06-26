@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
-import dataprovider
+from dataprovider import DataProvider
 import lookuptables
 
-db = dataprovider.db
+
+# connect to database
+dp = DataProvider('mongodb://localhost:27017')
 
 # configuration
 DEBUG = True
@@ -19,14 +21,14 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 @app.route('/info/events', methods=['GET'])
 def get_events():
-    events = db.get_events_names()
+    events = dp.get_events_names()
     response_obj = {'data': events, 'status': 'success', 'msg': ''}
     return jsonify(response_obj)
 
 
 @app.route('/info/sessions/<eventid>', methods=['GET'])
 def get_sessions_for_event(eventid):
-    sessions = db.get_sessions_names(eventid=eventid)
+    sessions = dp.get_sessions_names(eventid=eventid)
     response_obj = {'data': sessions, 'status': 'success', 'msg': ''}
     return jsonify(response_obj)
 
@@ -49,7 +51,7 @@ def get_telemetry_data():
     response_object = {'status': 'success', 'msg': ''}
     payload = request.get_json()
 
-    data = dataprovider.get_telemetry_data(payload)
+    data = dp.get_telemetry_data(payload)
 
     response_object['data'] = data
 
