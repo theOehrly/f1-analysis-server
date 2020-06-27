@@ -1,3 +1,12 @@
+"""
+:mod:`app` - Main Server App
+==============================
+
+This is the main server module (using flask).
+
+It handles requests according too the API documentation.
+"""
+
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 

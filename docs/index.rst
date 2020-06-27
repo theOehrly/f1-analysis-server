@@ -10,6 +10,15 @@ Documentation for F1 Analysis (Server)
    :maxdepth: 2
    :caption: Contents:
 
+   app
+   dataprovider
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Interfacing and Data Structure:
+
+   api
+   database
 
 
 Indices and tables
@@ -17,4 +26,3 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
