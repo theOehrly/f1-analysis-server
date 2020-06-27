@@ -4,3 +4,4 @@ docs/_build/
 profiling/
 recordings/
 venv/
+exp.py
